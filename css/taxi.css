@@ -1,0 +1,905 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color: #D1C2FF;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 90px;
+    background-color: rgba(51, 50, 122, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 5px 11px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    border-radius: 52px 52px 0px 52px;
+    margin-top: 10px;
+}
+
+.logo {
+    margin: 0 340px;
+}
+
+.logo a {
+    font-size: 42px;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.logo a:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.burger-icon {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burger-icon span {
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);   
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(51, 50, 122, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 5px 11px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px;
+    min-width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.menu-toggle:checked ~ .menu {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px 0;
+}
+
+.menu-toggle:checked ~ .burger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle:checked ~ .burger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .burger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.152);
+}
+
+.page-header {
+    padding: 140px 50px 60px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 64px;
+    font-weight: 900;
+    color: #454194;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(69, 65, 148, 0.3);
+}
+
+.page-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #534F98;
+}
+
+.tariffs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.tariff-section {
+    background-color: rgba(78, 76, 184, 0.3);
+    backdrop-filter: blur(2px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 5px 11px rgba(0, 0, 0, 0.3);
+    border-radius: 52px;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tariff-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tariff-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tariff-name {
+    font-size: 36px;
+    font-weight: 900;
+    color: #454194;
+    text-transform: uppercase;
+}
+
+.tariff-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgba(51, 50, 122, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 52px;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 
+        inset -3px -3px 10px rgba(255, 255, 255, 0.2),
+        inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tariff-badge.budget {
+    background-color: rgba(76, 175, 80, 0.7);
+}
+
+.tariff-badge.comfort {
+    background-color: rgba(33, 150, 243, 0.7);
+}
+
+.tariff-badge.business {
+    background-color: rgba(156, 39, 176, 0.7);
+}
+
+.tariff-badge.hyper {
+    background-color: rgba(244, 67, 54, 0.7);
+}
+
+.tariff-description {
+    font-size: 18px;
+    font-weight: 600;
+    color: #534F98;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cars-list {
+    margin-top: 30px;
+}
+
+.cars-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #454194;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+}
+
+.cars-grid li {
+    background-color: rgba(51, 50, 122, 0.4);
+    backdrop-filter: blur(2px);
+    padding: 15px 20px;
+    border-radius: 52px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 
+        inset -3px -3px 10px rgba(255, 255, 255, 0.1),
+        inset 3px 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.cars-grid li:hover {
+    background-color: rgba(51, 50, 122, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 
+        inset -3px -3px 10px rgba(255, 255, 255, 0.2),
+        inset 3px 3px 10px rgba(0, 0, 0, 0.1),
+        0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.cars-grid li::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.cars-grid li:hover::after {
+    content: '';
+    width: 300px;
+    height: 200px;
+    opacity: 1;
+    background-image: var(--car-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+        inset 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%) translateY(-15px);
+}
+
+/* Локальные изображения для такси */
+.cars-grid li[data-car="Kia Rio"]::after {
+    --car-image: url('../assets/images/Kia Rio.jpg');
+}
+
+.cars-grid li[data-car="Hyundai Solaris"]::after {
+    --car-image: url('../assets/images/Hyundai Solaris.webp');
+}
+
+.cars-grid li[data-car="Renault Logan"]::after {
+    --car-image: url('../assets/images/Renault Logan.webp');
+}
+
+.cars-grid li[data-car="Volkswagen Polo"]::after {
+    --car-image: url('../assets/images/Volkswagen Polo.webp');
+}
+
+.cars-grid li[data-car="Skoda Rapid"]::after {
+    --car-image: url('../assets/images/Skoda Rapid.webp');
+}
+
+.cars-grid li[data-car="Ford Fiesta"]::after {
+    --car-image: url('../assets/images/Ford Fiesta.webp');
+}
+
+.cars-grid li[data-car="Toyota Yaris"]::after {
+    --car-image: url('../assets/images/Toyota Yaris.webp');
+}
+
+.cars-grid li[data-car="Nissan Almera"]::after {
+    --car-image: url('../assets/images/Nissan Almera.webp');
+}
+
+.cars-grid li[data-car="Lada Vesta"]::after {
+    --car-image: url('../assets/images/Lada Vesta.webp');
+}
+
+.cars-grid li[data-car="Chevrolet Aveo"]::after {
+    --car-image: url('../assets/images/Chevrolet Aveo.jpg');
+}
+
+.cars-grid li[data-car="Datsun"]::after {
+    --car-image: url('../assets/images/Datsun.png');
+}
+
+/* Для такси - Комфорт */
+.cars-grid li[data-car="Toyota Camry"]::after {
+    --car-image: url('../assets/images/Toyota Camry.webp');
+}
+
+.cars-grid li[data-car="Volkswagen Passat"]::after {
+    --car-image: url('../assets/images/Volkswagen Passat.webp');
+}
+
+.cars-grid li[data-car="Skoda Octavia"]::after {
+    --car-image: url('../assets/images/Skoda Octavia.webp');
+}
+
+.cars-grid li[data-car="Hyundai Sonata"]::after {
+    --car-image: url('../assets/images/Hyundai Sonata.webp');
+}
+
+.cars-grid li[data-car="Kia Optima (K5)"]::after {
+    --car-image: url('../assets/images/Kia Optima (K5).jpeg');
+}
+
+.cars-grid li[data-car="Ford Mondeo"]::after {
+    --car-image: url('../assets/images/Ford Mondeo.webp');
+}
+
+.cars-grid li[data-car="Mazda 6"]::after {
+    --car-image: url('../assets/images/Mazda 6.webp');
+}
+
+.cars-grid li[data-car="Nissan Teana"]::after {
+    --car-image: url('../assets/images/Nissan Teana.webp');
+}
+
+.cars-grid li[data-car="Renault Talisman"]::after {
+    --car-image: url('../assets/images/Renault Talisman.webp');
+}
+
+.cars-grid li[data-car="Honda Accord"]::after {
+    --car-image: url('../assets/images/Honda Accord.webp');
+}
+
+.cars-grid li[data-car="Subaru Legacy"]::after {
+    --car-image: url('../assets/images/Subaru Legacy.webp');
+}
+
+/* Для такси - Бизнес */
+.cars-grid li[data-car="Mercedes E-Class"]::after {
+    --car-image: url('../assets/images/Mercedes E-Class.webp');
+}
+
+.cars-grid li[data-car="BMW 5 Series"]::after {
+    --car-image: url('../assets/images/BMW 5 Series.webp');
+}
+
+.cars-grid li[data-car="Audi A6"]::after {
+    --car-image: url('../assets/images/Audi A6.webp');
+}
+
+.cars-grid li[data-car="Volvo S90"]::after {
+    --car-image: url('../assets/images/Volvo S90.webp');
+}
+
+.cars-grid li[data-car="Lexus ES"]::after {
+    --car-image: url('../assets/images/Lexus ES.webp');
+}
+
+.cars-grid li[data-car="Jaguar XF"]::after {
+    --car-image: url('../assets/images/Jaguar XF.webp');
+}
+
+.cars-grid li[data-car="Genesis G80"]::after {
+    --car-image: url('../assets/images/Genesis G80.webp');
+}
+
+.cars-grid li[data-car="Skoda Superb"]::after {
+    --car-image: url('../assets/images/Skoda Superb.webp');
+}
+
+.cars-grid li[data-car="Cadillac CT5"]::after {
+    --car-image: url('../assets/images/Cadillac CT5.png');
+}
+
+.cars-grid li[data-car="Tesla Model 3"]::after {
+    --car-image: url('../assets/images/Tesla Model 3.webp');
+}
+
+.cars-grid li[data-car="Infiniti Q50"]::after {
+    --car-image: url('../assets/images/Infiniti Q50.webp');
+}
+
+/* Для такси - Гипер */
+.cars-grid li[data-car="Ford Mustang GT"]::after {
+    --car-image: url('../assets/images/Ford Mustang GT.jpg');
+}
+
+.cars-grid li[data-car="Chevrolet Camaro"]::after {
+    --car-image: url('../assets/images/Chevrolet Camaro.jpg');
+}
+
+.cars-grid li[data-car="Nissan GT-R"]::after {
+    --car-image: url('../assets/images/Nissan GT-R.png');
+}
+
+.cars-grid li[data-car="Porsche Cayman"]::after {
+    --car-image: url('../assets/images/Porsche Cayman.webp');
+}
+
+.cars-grid li[data-car="Audi TT RS"]::after {
+    --car-image: url('../assets/images/Audi TT RS.jpg');
+}
+
+.cars-grid li[data-car="BMW Competition"]::after {
+    --car-image: url('../assets/images/BMW Competition.webp');
+}
+
+.cars-grid li[data-car="Jaguar F-Type"]::after {
+    --car-image: url('../assets/images/Jaguar F-Type.jpg');
+}
+
+.cars-grid li[data-car="Alfa Romeo 4C"]::after {
+    --car-image: url('../assets/images/Alfa Romeo 4C.jpg');
+}
+
+.cars-grid li[data-car="Lotus Elise"]::after {
+    --car-image: url('../assets/images/Lotus Elise.jpg');
+}
+
+.cars-grid li[data-car="Tesla Performance"]::after {
+    --car-image: url('../assets/images/Tesla Performance.webp');
+}
+
+.cars-grid li[data-car="Kia Stinger GT"]::after {
+    --car-image: url('../assets/images/Kia Stinger GT.jpg');
+}
+
+footer {
+    background-color: rgba(51, 50, 122, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 -5px 11px rgba(0, 0, 0, 0.3);
+    padding: 60px 50px 30px;
+    margin-top: 60px;
+    border-radius: 52px 52px 0 0;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-info-item strong {
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    display: block;
+}
+
+.footer-info-item p {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-info-item a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-info p {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.footer-info p strong {
+    color: white;
+    font-weight: 800;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.social-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.support-chat {
+    margin-top: 20px;
+}
+
+.chat-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: rgba(209, 194, 255, 0.35);
+    backdrop-filter: blur(2px);
+    box-shadow: 
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.2),
+        0 5px 11px rgba(0, 0, 0, 0.3);
+    border-radius: 52px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.chat-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.footer-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    margin-top: 20px;
+}
+
+.footer-logo a {
+    font-size: 48px;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.footer-logo a:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.footer-qr-section {
+    align-items: center;
+}
+
+.footer-title-qr {
+    text-align: center;
+}
+
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.qr-code {
+    width: 152px;
+    height: 152px;
+    object-fit: contain;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Адаптивность для больших мониторов (30 дюймов, >1920px) */
+@media (min-width: 1921px) {
+    .page-title {
+        font-size: 80px;
+    }
+    
+    .page-subtitle {
+        font-size: 28px;
+    }
+    
+    .tariffs-container {
+        max-width: 1600px;
+    }
+    
+    .tariff-section {
+        padding: 50px;
+    }
+    
+    .tariff-name {
+        font-size: 42px;
+    }
+    
+    .tariff-description {
+        font-size: 20px;
+    }
+    
+    .cars-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .footer-content {
+        max-width: 1800px;
+    }
+}
+
+/* Адаптивность для ноутбуков */
+@media (max-width: 1200px) {
+    header {
+        width: 90%;
+    }
+    
+    .logo {
+        margin: 0 200px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-center {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 95%;
+        height: 80px;
+        border-radius: 30px 30px 0px 30px;
+    }
+    
+    .logo {
+        margin: 0 20px;
+    }
+    
+    .logo a {
+        font-size: 32px;
+    }
+    
+    .burger-icon {
+        display: flex;
+        position: absolute;
+        right: 20px;
+    }
+    
+    .page-header {
+        padding: 120px 30px 40px;
+    }
+    
+    .page-title {
+        font-size: 48px;
+    }
+    
+    .page-subtitle {
+        font-size: 20px;
+    }
+    
+    .tariffs-container {
+        padding: 0 30px 40px;
+        gap: 30px;
+    }
+    
+    .tariff-section {
+        padding: 30px;
+    }
+    
+    .tariff-name {
+        font-size: 28px;
+    }
+    
+    .cars-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+    
+    .cars-grid li:hover::after {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .footer-center {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 100%;
+        height: 70px;
+        border-radius: 0 0 20px 20px;
+        margin-top: 0;
+    }
+    
+    .logo {
+        margin: 0 15px;
+    }
+    
+    .logo a {
+        font-size: 24px;
+    }
+    
+    .burger-icon {
+        right: 15px;
+        width: 25px;
+        height: 25px;
+    }
+    
+    .page-header {
+        padding: 100px 20px 30px;
+    }
+    
+    .page-title {
+        font-size: 36px;
+    }
+    
+    .page-subtitle {
+        font-size: 18px;
+    }
+    
+    .tariffs-container {
+        padding: 0 20px 30px;
+        gap: 25px;
+    }
+    
+    .tariff-section {
+        padding: 25px;
+        border-radius: 30px;
+    }
+    
+    .tariff-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tariff-name {
+        font-size: 24px;
+    }
+    
+    .tariff-description {
+        font-size: 16px;
+    }
+    
+    .cars-title {
+        font-size: 18px;
+    }
+    
+    .cars-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .cars-grid li {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    
+    .cars-grid li:hover::after {
+        display: none;
+    }
+    
+    footer {
+        padding: 40px 30px 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-logo a {
+        font-size: 36px;
+    }
+}
+
