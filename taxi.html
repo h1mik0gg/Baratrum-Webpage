@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <title>Такси - Baratrum</title>
+    <link rel="stylesheet" href="css/taxi.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html">BARATRUM</a>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="menu">
+            <a href="profile.html" class="menu-item">профиль</a>
+            <a href="sell.html" class="menu-item">акции</a>
+            <a href="taxi.html" class="menu-item">такси</a>
+            <a href="carsharing.html" class="menu-item">каршеринг</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1 class="page-title">ТАКСИ</h1>
+        <p class="page-subtitle">Выберите тариф, который подходит именно вам</p>
+    </div>
+
+    <div class="tariffs-container">
+        <!-- Тариф: Эконом -->
+        <section class="tariff-section">
+            <div class="tariff-header">
+                <h2 class="tariff-name">Эконом</h2>
+            </div>
+            <p class="tariff-description">Дешёвый тариф с небольшим временем ожидания</p>
+            <div class="cars-list">
+                <h3 class="cars-title">Доступные автомобили:</h3>
+                <ul class="cars-grid">
+                    <li data-car="Kia Rio">Kia Rio</li>
+                    <li data-car="Hyundai Solaris">Hyundai Solaris</li>
+                    <li data-car="Renault Logan">Renault Logan</li>
+                    <li data-car="Volkswagen Polo">Volkswagen Polo</li>
+                    <li data-car="Skoda Rapid">Skoda Rapid</li>
+                    <li data-car="Ford Fiesta">Ford Fiesta</li>
+                    <li data-car="Toyota Yaris">Toyota Yaris</li>
+                    <li data-car="Nissan Almera">Nissan Almera</li>
+                    <li data-car="Lada Vesta">Lada Vesta</li>
+                    <li data-car="Chevrolet Aveo">Chevrolet Aveo</li>
+                    <li data-car="Datsun">Datsun</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Тариф: Бюджет -->
+        <section class="tariff-section">
+            <div class="tariff-header">
+                <h2 class="tariff-name">Бюджет</h2>
+            </div>
+            <p class="tariff-description">Дешевле эконома, но время ожидания может быть больше</p>
+            <div class="cars-list">
+                <h3 class="cars-title">Доступные автомобили:</h3>
+                <ul class="cars-grid">
+                    <li data-car="Kia Rio">Kia Rio</li>
+                    <li data-car="Hyundai Solaris">Hyundai Solaris</li>
+                    <li data-car="Renault Logan">Renault Logan</li>
+                    <li data-car="Volkswagen Polo">Volkswagen Polo</li>
+                    <li data-car="Skoda Rapid">Skoda Rapid</li>
+                    <li data-car="Ford Fiesta">Ford Fiesta</li>
+                    <li data-car="Toyota Yaris">Toyota Yaris</li>
+                    <li data-car="Nissan Almera">Nissan Almera</li>
+                    <li data-car="Lada Vesta">Lada Vesta</li>
+                    <li data-car="Chevrolet Aveo">Chevrolet Aveo</li>
+                    <li data-car="Datsun">Datsun</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Тариф: Комфорт -->
+        <section class="tariff-section">
+            <div class="tariff-header">
+                <h2 class="tariff-name">Комфорт</h2>
+            </div>
+            <p class="tariff-description">Дороже эконома, но поездка комфортнее из-за лучшего авто</p>
+            <div class="cars-list">
+                <h3 class="cars-title">Доступные автомобили:</h3>
+                <ul class="cars-grid">
+                    <li data-car="Toyota Camry">Toyota Camry</li>
+                    <li data-car="Volkswagen Passat">Volkswagen Passat</li>
+                    <li data-car="Skoda Octavia">Skoda Octavia</li>
+                    <li data-car="Hyundai Sonata">Hyundai Sonata</li>
+                    <li data-car="Kia Optima (K5)">Kia Optima (K5)</li>
+                    <li data-car="Ford Mondeo">Ford Mondeo</li>
+                    <li data-car="Mazda 6">Mazda 6</li>
+                    <li data-car="Nissan Teana">Nissan Teana</li>
+                    <li data-car="Renault Talisman">Renault Talisman</li>
+                    <li data-car="Honda Accord">Honda Accord</li>
+                    <li data-car="Subaru Legacy">Subaru Legacy</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Тариф: Бизнес -->
+        <section class="tariff-section">
+            <div class="tariff-header">
+                <h2 class="tariff-name">Бизнес</h2>
+            </div>
+            <p class="tariff-description">Самые комфортные авто - подойдёт тем, кто ценит комфорт</p>
+            <div class="cars-list">
+                <h3 class="cars-title">Доступные автомобили:</h3>
+                <ul class="cars-grid">
+                    <li data-car="Mercedes E-Class">Mercedes E-Class</li>
+                    <li data-car="BMW 5 Series">BMW 5 Series</li>
+                    <li data-car="Audi A6">Audi A6</li>
+                    <li data-car="Volvo S90">Volvo S90</li>
+                    <li data-car="Lexus ES">Lexus ES</li>
+                    <li data-car="Jaguar XF">Jaguar XF</li>
+                    <li data-car="Genesis G80">Genesis G80</li>
+                    <li data-car="Skoda Superb">Skoda Superb</li>
+                    <li data-car="Cadillac CT5">Cadillac CT5</li>
+                    <li data-car="Tesla Model 3">Tesla Model 3</li>
+                    <li data-car="Infiniti Q50">Infiniti Q50</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Тариф: Гипер -->
+        <section class="tariff-section">
+            <div class="tariff-header">
+                <h2 class="tariff-name">Гипер</h2>
+            </div>
+            <p class="tariff-description">Нестандартный тариф, включающий в себя спорт-авто</p>
+            <div class="cars-list">
+                <h3 class="cars-title">Доступные автомобили:</h3>
+                <ul class="cars-grid">
+                    <li data-car="Ford Mustang GT">Ford Mustang GT</li>
+                    <li data-car="Chevrolet Camaro">Chevrolet Camaro</li>
+                    <li data-car="Nissan GT-R">Nissan GT-R</li>
+                    <li data-car="Porsche Cayman">Porsche Cayman</li>
+                    <li data-car="Audi TT RS">Audi TT RS</li>
+                    <li data-car="BMW Competition">BMW Competition</li>
+                    <li data-car="Jaguar F-Type">Jaguar F-Type</li>
+                    <li data-car="Alfa Romeo 4C">Alfa Romeo 4C</li>
+                    <li data-car="Lotus Elise">Lotus Elise</li>
+                    <li data-car="Tesla Performance">Tesla Performance</li>
+                    <li data-car="Kia Stinger GT">Kia Stinger GT</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Контактная информация</h3>
+                <div class="footer-info">
+                    <div class="footer-info-item">
+                        <strong>Телефон службы поддержки</strong>
+                        <p>+7 (999) 777-99-77 (круглосуточно)</p>
+                    </div>
+                    <div class="footer-info-item">
+                        <strong>Электронная почта</strong>
+                        <p>baratrum.official.help@gmail.com</p>
+                    </div>
+                    <div class="footer-info-item">
+                        <strong>Адрес офиса</strong>
+                        <p><a href="https://www.google.com/maps/place/%D0%9E%D1%80%D0%B5%D0%BD%D0%B1%D1%83%D1%80%D0%B3%D1%81%D0%BA%D0%B8%D0%B9+%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%B4%D0%B6+%D1%8D%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B8%D0%BA%D0%B8+%D0%B8+%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B8/@51.7650301,55.1231638,18.96z/data=!4m15!1m8!3m7!1s0x417bf0c786623219:0xefa4836449247add!2z0YPQuy4g0KfQutCw0LvQvtCy0LAsIDExLCDQntGA0LXQvdCx0YPRgNCzLCDQntGA0LXQvdCx0YPRgNCz0YHQutCw0Y8g0L7QsdC7LiwgNDYwMDI0!3b1!8m2!3d51.7667449!4d55.1208634!16s%2Fg%2F11c1hf8hqp!3m5!1s0x417bf0b8489e5af1:0x66d87b7f0aa565aa!8m2!3d51.7652439!4d55.124092!16s%2Fg%2F11ydk6_tv?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D">г. Оренбург, Ул. Чкалова, 11</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title">Социальные сети</h3>
+                <div class="social-links">
+                    <a href="https://t.me/BaratrumOfficial" class="social-link" target="_blank">
+                        <img src="assets/images/Тг.svg" alt="Telegram" class="social-icon">
+                        <span>@BaratrumOfficial</span>
+                    </a>
+                    <a href="https://vk.com/Baratrum_official" class="social-link" target="_blank">
+                        <img src="assets/images/Вк.svg" alt="VK" class="social-icon">
+                        <span>@Baratrum_official</span>
+                    </a>
+                    <a href="https://zen.yandex.ru/Baratrum_offc" class="social-link" target="_blank">
+                        <img src="assets/images/Дзен.svg" alt="Яндекс.Дзен" class="social-icon">
+                        <span>@Baratrum_offc</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title">Режим работы</h3>
+                <div class="footer-info">
+                    <p><strong>Служба поддержки</strong> — круглосуточно</p>
+                    <p><strong>Офис</strong> — пн-пт, 9:00–21:00</p>
+                </div>
+                <div class="support-chat">
+                    <a href="https://t.me/BaratrumTaxi_bot" target="_blank" class="chat-link">Чат поддержки</a>
+                </div>
+            </div>
+
+            <div class="footer-section footer-center">
+                <div class="footer-logo">
+                    <a href="home.html">BARATRUM</a>
+                </div>
+            </div>
+
+            <div class="footer-section footer-qr-section">
+                <h3 class="footer-title footer-title-qr">Скачайте приложение</h3>
+                <div class="qr-code-container">
+                    <img src="assets/images/Qr code.svg" alt="QR код для скачивания приложения" class="qr-code">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="agreement.html" class="footer-link">Пользовательское соглашение</a>
+        </div>
+    </footer>
+</body>
+</html>
+

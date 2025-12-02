@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <title>Вход / Регистрация - Baratrum</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html">BARATRUM</a>
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="menu">
+            <a href="profile.html" class="menu-item">профиль</a>
+            <a href="sell.html" class="menu-item">акции</a>
+            <a href="taxi.html" class="menu-item">такси</a>
+            <a href="carsharing.html" class="menu-item">каршеринг</a>
+        </nav>
+    </header>
+
+    <div class="notification" id="notification"></div>
+
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <div class="auth-tabs" id="authTabsContainer">
+                <button type="button" class="auth-tab active" id="loginTab" data-tab="login">Вход</button>
+                <button type="button" class="auth-tab" id="registerTab" data-tab="register">Регистрация</button>
+            </div>
+
+            <!-- Форма авторизации -->
+            <div class="auth-form-container active" id="loginForm">
+                <h2 class="form-title">Вход в аккаунт</h2>
+                <form class="auth-form" id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginPhone">Номер телефона</label>
+                        <input type="tel" id="loginPhone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" name="password" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Войти</button>
+                </form>
+            </div>
+
+            <!-- Форма регистрации -->
+            <div class="auth-form-container" id="registerForm">
+                <h2 class="form-title">Регистрация</h2>
+                <form class="auth-form" id="registerFormElement">
+                    <div class="form-group">
+                        <label for="registerPhone">Номер телефона</label>
+                        <input type="tel" id="registerPhone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Электронная почта</label>
+                        <input type="email" id="registerEmail" name="email" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerName">Имя</label>
+                        <input type="text" id="registerName" name="name" placeholder="Введите ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerCity">Город</label>
+                        <input type="text" id="registerCity" name="city" placeholder="Введите ваш город" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerBirthday">Дата рождения</label>
+                        <input type="date" id="registerBirthday" name="birthday" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Пароль</label>
+                        <input type="password" id="registerPassword" name="password" placeholder="Введите пароль" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPasswordConfirm">Повторение пароля</label>
+                        <input type="password" id="registerPasswordConfirm" name="passwordConfirm" placeholder="Повторите пароль" required>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                        <label for="dataConsent">Согласие на обработку персональных данных</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth-check.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+
